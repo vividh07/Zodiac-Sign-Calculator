@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Sign</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+        .bg-pink{
+            background-color: pink;
+        }
+
+         .zodiac-name {
+           font-family: Georgia, 'Times New Roman', Times, serif ;
+            color: red; 
+        } 
+    </style>
+</head>
+<body style="background-color: lightcoral;">
+
+    <script>
+        
+        let date,month,image;
+        image = "https://www.prokerala.com/astrology/assets/img/header/zodiac-sign-dates.png";
+        date = parseInt(prompt("Enter Your Birth Date"));
+        if(date < 1 || date > 31)
+        {
+            alert("Please enter a valid date");
+            date = parseInt(prompt("Enter Your Birth Date"));
+        }
+        month = parseInt(prompt("Enter Your Birth Month"));
+        if(month < 1 || month > 12)
+        {
+            alert("Please enter a valid month");
+            month = parseInt(prompt("Enter Your Birth Month"));
+        }
+
+        let zodiacSign;
+        if ((month === 1 && date >= 20) || (month === 2 && date <= 18)) {
+            zodiacSign = "Aquarius";
+        } else if ((month === 2 && date >= 19) || (month === 3 && date <= 20)) {
+            zodiacSign = "Pisces";
+        } else if ((month === 3 && date >= 21) || (month === 4 && date <= 19)) {
+            zodiacSign = "Aries";
+        } else if ((month === 4 && date >= 20) || (month === 5 && date <= 20)) {
+            zodiacSign = "Taurus";
+        } else if ((month === 5 && date >= 21) || (month === 6 && date <= 20)) {
+            zodiacSign = "Gemini";
+        } else if ((month === 6 && date >= 21) || (month === 7 && date <= 22)) {
+            zodiacSign = "Cancer";
+        } else if ((month === 7 && date >= 23) || (month === 8 && date <= 22)) {
+            zodiacSign = "Leo";
+        } else if ((month === 8 && date >= 23) || (month === 9 && date <= 22)) {
+            zodiacSign = "Virgo";
+        } else if ((month === 9 && date >= 23) || (month === 10 && date <= 22)) {
+            zodiacSign = "Libra";
+        } else if ((month === 10 && date >= 23) || (month === 11 && date <= 21)) {
+            zodiacSign = "Scorpio";
+        } else if ((month === 11 && date >= 22) || (month === 12 && date <= 21)) {
+            zodiacSign = "Sagittarius";
+        } else {
+            zodiacSign = "Capricorn";
+        }
+        
+        const dis = {
+            Aquarius: "Aquarius is known for its independent and humanitarian nature. Individuals born under this sign are often innovative, progressive, and open-minded. They value their freedom and enjoy exploring new ideas and concepts.",
+            Pisces: "Pisces is characterized by its compassionate and artistic traits. People born under this sign are often empathetic, intuitive, and creative. They have a deep connection to their emotions and are known for their selflessness and empathy towards others.",
+            Aries: "Aries is known for its courageous and energetic personality. Those born under this sign are often bold, ambitious, and passionate. They have a natural leadership ability and are not afraid to take on challenges head-on.",
+            Taurus: "Taurus is known for its grounded and practical nature. Individuals born under this sign are often reliable, patient, and determined. They value stability and security and are known for their strong work ethic and loyalty.",
+            Gemini: "Gemini is characterized by its curious and adaptable traits. People born under this sign are often sociable, witty, and versatile. They enjoy learning new things and are skilled communicators who can easily adapt to different situations.",
+            Cancer: "Cancer is known for its nurturing and sensitive nature. Those born under this sign are often caring, empathetic, and protective. They value their family and home life and are known for their strong intuition and emotional depth.",
+            Leo: " Leo is characterized by its confident and charismatic personality. Individuals born under this sign are often generous, ambitious, and passionate. They have a natural flair for the dramatic and enjoy being the center of attention.",
+            Virgo: "Virgo is known for its practical and analytical traits. People born under this sign are often detail-oriented, organized, and hardworking. They have a strong sense of responsibility and strive for perfection in everything they do.",
+            Libra: "Libra is characterized by its diplomatic and harmonious nature. Those born under this sign are often charming, fair-minded, and sociable. They value balance and fairness in their relationships and enjoy creating harmony in their surroundings.",
+            Scorpio: "Scorpio is known for its intense and passionate personality. Individuals born under this sign are often determined, intuitive, and mysterious. They have a strong sense of purpose and are not afraid to delve deep into their emotions and experiences.",
+            Sagittarius: "Sagittarius is characterized by its adventurous and optimistic traits. People born under this sign are often enthusiastic, independent, and philosophical. They have a love for exploration and freedom and are known for their adventurous spirit.",
+            Capricorn: "Capricorn is known for its disciplined and ambitious nature. Those born under this sign are often responsible, practical, and hardworking. They have a strong sense of duty and are determined to achieve their goals through perseverance and dedication."
+        };
+
+        document.write(`  <div class="container p-5 ">
+            <div class="card text-center bg-pink">
+              <div class="card-header">
+                <img src=${image} alt="">
+              </div>
+              <div class="card-body zodiac-name">
+                      <h1>Your zodiac Sign is  ${zodiacSign}</h1>
+                      <p>${dis[zodiacSign]}</p>
+            </div>
+        </div>`);
+        
+      
+
+    </script>
+</body>
+</html>
